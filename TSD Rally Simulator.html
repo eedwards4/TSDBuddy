@@ -58,8 +58,12 @@ fieldset:disabled{opacity:.55}
 input{font:inherit;width:100%;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);min-height:40px}
 input.bad{border-color:var(--bad);background:var(--badbg)}
 .col h3{font-size:.95rem;margin:0 0 2px}.col p{color:var(--mut);font-size:.8rem;margin:0 0 8px}
-.row{display:flex;gap:6px;align-items:center;margin-bottom:6px}
+.row{display:flex;gap:8px;align-items:center;margin-bottom:6px}
 .n{width:22px;text-align:right;color:var(--mut);font-size:.8rem;flex:none}
+.config-row input[type="text"]{flex:1 1 220px}
+.config-row input[type="number"]{flex:0 0 110px;width:110px}
+.config-row label.toggle{display:inline-flex;align-items:center;gap:6px;color:var(--mut);font-size:.8rem;white-space:nowrap}
+.config-row label.toggle input{width:auto;min-height:16px;accent-color:var(--ac)}
 .acts{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 </style>
 </head>
