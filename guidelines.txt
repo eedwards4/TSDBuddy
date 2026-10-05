@@ -1,8 +1,8 @@
-What:	An app that simulates time and distance output for the purpose of practicing navigational road rally timing calculations.
+What: An app that simulates time and distance output for the purpose of practicing navigational road rally timing calculations.
 
 Description: 
 
-An app that runs on a PC, or eventually an iPhone or Android, that allows for the input of up to 10 checkpoint locations,
+An app that runs on a PC, iPhone or Android, that allows for the input of up to 10 checkpoint locations,
 up to 10 waypoints such as turns or stops, up to 10 speed change locations, and a start time. When run, the app will set random
 distances to the waypoints (between 2 and 5 miles), then "run" the rally displaying running time and current speed. The speed will
 be based around the numbers set in the speed change locations, but vary randomly by +/- 5 mph. Input during the operation will allow

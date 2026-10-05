@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSDBuddy Rally Timer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell" id="app-shell">
+      <aside id="settings-panel" class="panel settings-panel" data-collapsed="false">
+        <div class="settings-header">
+          <button id="settings-toggle" class="settings-toggle" aria-expanded="true" aria-controls="settings-content" type="button">
+            <span class="toggle-mark">‹</span>
+          </button>
+          <h2>Settings</h2>
+        </div>
+
+        <div id="settings-content" class="settings-content">
+          <section class="settings-block">
+            <div class="two-column">
+              <label>
+                Start speed (mph)
+                <input id="start-speed" type="number" min="10" max="90" value="25" />
+              </label>
+              <label>
+                Start time
+                <input id="start-time" type="time" value="08:30" />
+              </label>
+            </div>
+          </section>
+
+          <section class="settings-block">
+            <div class="block-header">
+              <h3>Checkpoints</h3>
+            </div>
+            <div id="checkpoint-list" class="input-list"></div>
+          </section>
+
+          <section class="settings-block">
+            <div class="block-header">
+              <h3>Waypoints</h3>
+            </div>
+            <div id="waypoint-list" class="input-list"></div>
+          </section>
+
+          <section class="settings-block">
+            <div class="block-header">
+              <h3>Speed changes</h3>
+            </div>
+            <div id="speed-change-list" class="speed-list"></div>
+          </section>
+        </div>
+      </aside>
+
+      <main class="panel dashboard-panel">
+        <header class="dashboard-header">
+          <div>
+            <p class="eyebrow">Road rally simulator</p>
+            <h1>TSDBuddy</h1>
+          </div>
+        </header>
+
+        <div class="dashboard-body">
+          <div class="action-row">
+            <button id="start-btn" class="primary">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="stop-btn">Stop</button>
+            <button data-speed-adjust="-1" class="secondary">-1 mph</button>
+            <button data-speed-adjust="1" class="secondary">+1 mph</button>
+          </div>
+
+          <div class="readout-grid">
+            <div class="metric-card">
+              <span class="metric-label">Mileage</span>
+              <strong id="distance-value">0.00</strong>
+              <small>mi</small>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Current speed</span>
+              <strong id="speed-value">0</strong>
+              <small>mph</small>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Running time</span>
+              <strong id="time-value">00.00</strong>
+              <small>min</small>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Clock</span>
+              <strong id="clock-value">08:30</strong>
+              <small>time</small>
+            </div>
+          </div>
+
+          <div class="announcement-panel" id="announcement-box" aria-live="polite">
+            Ready to start.
+          </div>
+
+          <div class="log-panel">
+            <div class="log-header">
+              <h2>Checkpoint notes</h2>
+            </div>
+            <ol id="checkpoints-log" class="log-list"></ol>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
