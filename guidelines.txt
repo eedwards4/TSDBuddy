@@ -1,1 +1,56 @@
-these are the guidelines.
+What:	An app that simulates time and distance output for the purpose of practicing navigational road rally timing calculations.
+
+Description: 
+
+An app that runs on a PC, or eventually an iPhone or Android, that allows for the input of up to 10 checkpoint locations,
+up to 10 waypoints such as turns or stops, up to 10 speed change locations, and a start time. When run, the app will set random
+distances to the waypoints (between 2 and 5 miles), then "run" the rally displaying running time and current speed. The speed will
+be based around the numbers set in the speed change locations, but vary randomly by +/- 5 mph. Input during the operation will allow
+the operator to increase or decrease the running speed (with up/down arrows or +/- keys) and hit the space bar to freeze/unfreeze the display
+(but the actual run continues in the background). The app will announce that a checkpoint is coming up about .25 miles before, then announce
+the passage with an "early" or "late" amount based on the arrival time compared to the perfect time. The goal for the operator is to 
+check the displayed time/distance against a calculated time/distance and try to get to the checkpoints as accurately as possible.
+
+Set up input:
+
+Checkpoint locations in 00.00 miles format
+
+Waypoint locations in 00.00 miles format
+
+Speed change locations in 00.00 miles format and ## miles per hour format
+
+Running input:
+
+Clicking a start button begins run - a pause button pauses the run - a stop button ends the run
+
+Space bar freezes/unfreezes display so operator can write down time and mileage data while app runs in background
+
++/- or up/down keys change operating speed (but not target speed set earlier) by 1 mph per click 
+     (operating speed still varies randomly - especially in turns)
+
+Running output:
+
+Display approximating example provided that shows running mileage, current speed, and time
+
+Announcement or display message that a checkpoint is approaching (.2 to .25 miles before)
+
+Announcement or display message that a checkpoint has passed with an "early" or "late" time amount
+
+Computation:
+
+Precise arrival times to checkpoints based on distance and target speed
+
+Example:
+Mile 0.00, speed 25, begin
+Mile 1.25, stop - pause 10 seconds
+Mile 1.80, speed 30
+Mile 2.25, checkpoint
+
+Precise arrival time = ((1.25/25)*60) + 0.167 + ((0.55/25)*60) + ((1.45/30)*60) = 3 + .167 + 1.32 + 2.90 = 7.387 minutes
+
+Timing is more easily performed using minutes and hundredths of a minute rather than minutes and seconds - that's how we run rallies
+
+Random changes to running speed should be slow, unless a turn is defined, where it should drop by about 5 mph
+
+Arrival time at checkpoints is compared to precise time and difference is announced or displayed
+
