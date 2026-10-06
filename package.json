@@ -1,9 +1,60 @@
 {
   "name": "tsdbuddy",
+  "description": "TSD Rally Simulator desktop app",
+  "author": "TSDBuddy",
+  "license": "MIT",
   "version": "1.0.0",
   "private": true,
+  "main": "main.js",
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "start": "electron .",
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.tsdbuddy.desktop",
+    "productName": "TSDBuddy",
+    "icon": "build/icon",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "styles.css",
+      "TSD Rally Simulator.html",
+      "main.js",
+      "preload.js",
+      "src/**",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "TSDBuddy-${version}-${arch}.${ext}"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "tar.gz"
+      ],
+      "category": "Utility"
+    }
+  },
+  "devDependencies": {
+    "electron": "^37.2.4",
+    "electron-builder": "^26.0.0"
   }
 }
