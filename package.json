@@ -1,7 +1,10 @@
 {
   "name": "tsdbuddy",
   "description": "TSD Rally Simulator desktop app",
-  "author": "TSDBuddy",
+  "author": {
+    "name": "TSDBuddy",
+    "email": "support@tsdbuddy.app"
+  },
   "license": "MIT",
   "version": "1.0.0",
   "private": true,
@@ -17,13 +20,16 @@
   "build": {
     "appId": "com.tsdbuddy.desktop",
     "productName": "TSDBuddy",
-    "icon": "build/icon",
+    "icon": "stopwatch",
     "directories": {
       "output": "dist"
     },
     "files": [
       "index.html",
       "styles.css",
+      "splash.html",
+      "stopwatch.png",
+      "stopwatch.ico",
       "TSD Rally Simulator.html",
       "main.js",
       "preload.js",
